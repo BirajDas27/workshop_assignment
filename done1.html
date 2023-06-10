@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            notice
+        </title>
+        <style>
+            body{
+                background-image: url('assignment_bg.PNG');
+                background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size:100% 100%;
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    </head>
+    
+    <body>
+        <div class="top-bar">
+            <span><ion-icon name="pencil"></ion-icon>Write with us</span>
+            <ul>
+                <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+            </ul>
+        </div>
+        <nav>
+            <div class="logo">
+                <a href="#"><img src="notice_img.PNG" alt="logo"> Creative Ink</a>
+            </div>
+            <div class="toggle">
+                <a href="#"><ion-icon name="menu"></ion-icon></a>
+            </div>
+            <ul class="menu">
+                <li><a href="#"><b>HELP</b></a></li>
+                <li><a href="#"><b>CONTACT</b></a></li>
+                <li><a href="#"><b>ABOUT</b></a></li>
+            </ul>
+        </nav>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+
+            $(function(){
+                $(".toggle").on("click", function(){
+                    if($(".menu").hasClass("active")){
+                        $(".menu").removeClass("active");
+                        $(this).find("a").html("<ion-icon name='menu'></ion-icon>");
+                    } else{
+                        $(".menu").addClass("active");
+                        $(this).find("a").html("<ion-icon name='close'></ion-icon>");
+                    }
+                })
+            })
+        </script>
+
+        <div class="container">
+            <div class="message">
+                <p>Your notice has been successfully submitted!</p>
+            </div>
+            <div class="title1">
+                <p class="content_title">Title: <span id="title"></span></p>
+                <div>
+                    <script>
+                        document.getElementById('title').textContent = localStorage.getItem('title');
+                    </script>
+                </div>
+            </div>
+            <div class="des1">
+                <p class="content_descr">Description: <span id="description"></span></p>
+                <div>
+                    <script>
+                        document.getElementById('description').textContent = localStorage.getItem('description');
+                    </script>
+                </div>
+        </div>
+        <script src="style.css"></script>
+        
+    </body>
+</html>

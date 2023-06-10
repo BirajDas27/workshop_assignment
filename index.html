@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            notice
+        </title>
+        <style>
+            body{
+                background-image: url('assignment_bg.PNG');
+                background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size:100% 100%;
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    </head>
+    
+    <body>
+        <div class="top-bar">
+            <span><ion-icon name="pencil"></ion-icon>Write with us</span>
+            <ul>
+                <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+            </ul>
+        </div>
+        <nav>
+            <div class="logo">
+                <a href="#"><img src="notice_img.PNG" alt="logo"> Creative Ink</a>
+            </div>
+            <div class="toggle">
+                <a href="#"><ion-icon name="menu"></ion-icon></a>
+            </div>
+            <ul class="menu">
+                <li><a href="#"><b>HELP</b></a></li>
+                <li><a href="#"><b>CONTACT</b></a></li>
+                <li><a href="#"><b>ABOUT</b></a></li>
+            </ul>
+        </nav>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+
+            $(function(){
+                $(".toggle").on("click", function(){
+                    if($(".menu").hasClass("active")){
+                        $(".menu").removeClass("active");
+                        $(this).find("a").html("<ion-icon name='menu'></ion-icon>");
+                    } else{
+                        $(".menu").addClass("active");
+                        $(this).find("a").html("<ion-icon name='close'></ion-icon>");
+                    }
+                })
+            })
+        </script>
+
+        <form action="" method="post">
+            <div class="content">
+                <div class="input-box1">
+                    <div style="font-size: xxx-large;">
+                        <label for="topic"><b>Title</b></label>
+                    </div>
+                    <div class="box1">
+                        <input id="titleInput" type="text" font="50" placeholder="Enter title of your notice." topic="topic" autofocus required>
+                    </div>
+                </div>
+                <div class="input-box2">
+                    <div class="des" style="font-size: xxx-large;">
+                        <b label for="description"><b>Description</b></label>
+                    </div>
+                    <div class="box2">
+                        <textarea id="descriptionInput" type="text" placeholder="Type content of your notice." description="description" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="b1">
+                <a href="done1.html" onclick="submitForm(event)">CREATE</a>
+
+            </div>
+            
+        </form>
+        <script src="script.js"></script>
+    </body>
+</html>
